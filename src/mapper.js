@@ -1,4 +1,5 @@
 exports.parsePriceValue = (price) => {
+    if (!price) return null;
     const priceFormat = (+price.split(" ")[0]);
     return priceFormat ? `S/${priceFormat.toFixed(2)}` : null
 }
@@ -25,40 +26,23 @@ exports.parseToString = (item) => {
             <div style="padding: 5px;">
                 <img src="${item.image}" alt="" style="max-width: 100%;">
             </div>
-            <div style="font-size: 11px; color: #444;">
-                ${item.brand}
-            </div>
-            <div style="font-size: 12px; margin-bottom: 10px; line-height: 18px;"><b>
-                ${item.name}
-            </b></div>
-
+            <div style="font-size: 11px; color: #444;">${item.brand}</div>
+            <div style="font-size: 12px; margin-bottom: 10px; line-height: 18px;"><b>${item.name}</b></div>
             <table width="100%">
                 <tr>
                     <td>
-                        ${item.salePrice ? 
-                            `
-                            <div style="font-size: 12px; color: #444; text-decoration: line-through;">
-                                ${item.regPrice}
-                            </div>
-                            <div style="font-size: 13px; color: #000; font-weight: bold;">
-                                ${item.salePrice}
-                            </div>
-                            `
-                        :
-                            `
-                            <div style="font-size: 13px; color: #000; font-weight: bold;">
-                                ${item.regPrice}
-                            </div>
-                            ` 
-                        }
+                    ${item.salePrice ? 
+                        `<div style="font-size: 12px; color: #444; text-decoration: line-through;">${item.regPrice}</div>
+                        <div style="font-size: 13px; color: #000; font-weight: bold;">${item.salePrice}</div>`
+                    :
+                        `<div style="font-size: 13px; color: #000; font-weight: bold;">${item.regPrice}</div>` 
+                    }
                     </td>
                     <td style="text-align: right;">
                         ${
-                            item.ohPrice && 
-                            `<img src="https://performance-mailing.s3.amazonaws.com/Mifarma/MAIL/2021/OCT/TOH/oh.jpg" width="32">
-                            <div style="font-size: 13px; color: #000; font-weight: bold;">
-                                ${item.ohPrice}
-                            </div>`
+                        item.ohPrice && 
+                        `<img src="https://performance-mailing.s3.amazonaws.com/Mifarma/MAIL/2021/OCT/TOH/oh.jpg" width="32">
+                        <div style="font-size: 13px; color: #000; font-weight: bold;">${item.ohPrice}</div>`
                         }
                     </td>
                 </tr>
