@@ -21,6 +21,7 @@ exports.itemMap = (item) => {
 
 exports.parseToString = (item) => {
     return `
+    <td width="153px">
         <a href="${item.url}"
         style="text-decoration: none; color: #000; background: #fff; display: inline-block; margin: 10px 5px; border-radius: 10px; padding: 10px; min-height: 280px;">
             <div style="padding: 5px;">
@@ -48,5 +49,6 @@ exports.parseToString = (item) => {
                 </tr>
             </table>
         </a>
+    </td>
     `;
 }

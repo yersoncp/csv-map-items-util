@@ -14,6 +14,6 @@ data.forEach((item, i) => {
     }
 })
 
-const response = parseToString(items[0])
+const response = items.map(item => parseToString(item))
 console.log(`Items procesados ${items.length}`)
-fs.writeFileSync('out/hello.html',response);
+fs.writeFileSync('out/export.html',response.join(""));
