@@ -33,17 +33,17 @@ exports.parseToString = (item) => {
                 <tr>
                     <td style="vertical-align: bottom;">
                     ${item.salePrice ? 
-                        `<div style="font-size: 12px; color: #444; text-decoration: line-through; font-family: 'Arial'">${item.regPrice}</div>
-                        <div style="font-size: 13px; color: #000; font-family: 'Arial'>${item.salePrice}</div>`
+                        `<div style="font-size: 12px; color: #444; text-decoration: line-through; font-family: Arial">${item.regPrice}</div>
+                        <div style="font-size: 13px; color: #000; font-family: Arial">${item.salePrice}</div>`
                     :
-                        `<div style="font-size: 13px; color: #000; font-family: 'Arial'>${item.regPrice}</div>` 
+                        `<div style="font-size: 13px; color: #000; font-family: Arial">${item.regPrice}</div>` 
                     }
                     </td>
-                    <td style="text-align: right; font-family: 'Arial'">
+                    <td style="text-align: right; font-family: Arial">
                         ${
-                        item.ohPrice && 
+                        item.ohPrice ? 
                         `<img src="https://performance-mailing.s3.amazonaws.com/Mifarma/MAIL/2021/OCT/TOH/oh.jpg" width="32">
-                        <div style="font-size: 13px; color: #000; font-weight: bold;">${item.ohPrice}</div>`
+                        <div style="font-size: 13px; color: #000; font-weight: bold;">${item.ohPrice}</div>` : ''
                         }
                     </td>
                 </tr>
