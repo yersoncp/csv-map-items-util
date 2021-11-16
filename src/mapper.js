@@ -31,15 +31,15 @@ exports.parseToString = (item) => {
             <div style="font-size: 12px; margin-bottom: 10px; line-height: 18px;"><b>${item.name}</b></div>
             <table width="100%">
                 <tr>
-                    <td>
+                    <td style="vertical-align: bottom;">
                     ${item.salePrice ? 
-                        `<div style="font-size: 12px; color: #444; text-decoration: line-through;">${item.regPrice}</div>
-                        <div style="font-size: 13px; color: #000; font-weight: bold;">${item.salePrice}</div>`
+                        `<div style="font-size: 12px; color: #444; text-decoration: line-through; font-family: 'Arial'">${item.regPrice}</div>
+                        <div style="font-size: 13px; color: #000; font-family: 'Arial'>${item.salePrice}</div>`
                     :
-                        `<div style="font-size: 13px; color: #000; font-weight: bold;">${item.regPrice}</div>` 
+                        `<div style="font-size: 13px; color: #000; font-family: 'Arial'>${item.regPrice}</div>` 
                     }
                     </td>
-                    <td style="text-align: right;">
+                    <td style="text-align: right; font-family: 'Arial'">
                         ${
                         item.ohPrice && 
                         `<img src="https://performance-mailing.s3.amazonaws.com/Mifarma/MAIL/2021/OCT/TOH/oh.jpg" width="32">
